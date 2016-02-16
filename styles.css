@@ -1,3 +1,58 @@
+@font-face {
+    font-family: asche;
+    src: url(font/asche.otf);
+}
+
+@font-face {
+    font-family: bellaboo;
+    src: url(font/bellaboo.otf);
+}
+
+@font-face {
+    font-family: break;
+    src: url(font/break.ttf);
+}
+
+@font-face {
+    font-family: frinco;
+    src: url(font/frinco.otf);
+}
+
+@font-face {
+    font-family: geurrilla;
+    src: url(font/geurrilla.otf);
+}
+
+@font-face {
+    font-family: milano;
+    src: url(font/milano.otf);
+}
+
+@font-face {
+    font-family: nazare;
+    src: url(font/nazare.otf);
+}
+
+@font-face {
+    font-family: order;
+    src: url(font/order.ttf);
+}
+
+@font-face {
+    font-family: rex;
+    src: url(font/rex.otf);
+}
+
+@font-face {
+    font-family: troika;
+    src: url(font/troika.otf);
+}
+
+@font-face {
+    font-family: zag;
+    src: url(font/zag.otf);
+}
+
 html, body{
 	height: 100%;
 	text-align: center;
@@ -122,6 +177,51 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+/* font classes */
+.asche{
+  font-family: asche;
+}
+
+.bellaboo{
+  font-family: bellaboo;
+}
+
+.break{
+  font-family: break;
+}
+
+.frinco{
+  font-family: frinco;
+}
+
+.geurrilla{
+  font-family: geurrilla;
+}
+
+.milano{
+  font-family: milano;
+}
+
+.nazare{
+  font-family: nazare;
+}
+
+.order{
+  font-family: order;
+}
+
+.rex{
+  font-family: rex;
+}
+
+.troika{
+  font-family: troika;
+}
+
+.zag{
+  font-family: zag;
 }
 
 @media (min-width: 768px) {

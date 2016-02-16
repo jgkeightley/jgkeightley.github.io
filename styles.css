@@ -189,6 +189,35 @@ body {
   margin: 0;
 }
 
+.mural .j1{
+  font-size: 9.5em;
+  margin-bottom: -10px;
+}
+
+.mural .j2{
+  font-size: 6.2em;
+  margin-bottom: -20px;
+}
+
+.mural .j3{
+  font-size: 5.5em;
+  margin-bottom: -15px;
+}
+
+.mural .j4{
+  font-size: 4.5em;
+  margin-bottom: -10px;
+}
+
+.mural .j5{
+  font-size: 4.2em;
+}
+
+.mural .j6{
+  font-size: 3em;
+  padding-top: 15px;
+}
+
 /* font classes */
 .asche{
   font-family: asche;
@@ -279,5 +308,12 @@ body {
 
   .cover {
     margin-top: 5%
+  }
+}
+
+@media (max-width: 768px) {
+  .mural h1, .mural .j1, .mural .j2, .mural .j3, .mural .j4, .mural .j5, .mural .j6 {
+    font-size: 3em;
+    margin: 0;
   }
 }

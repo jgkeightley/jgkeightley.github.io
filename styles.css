@@ -24,6 +24,11 @@
 }
 
 @font-face {
+    font-family: jaapokki;
+    src: url(font/jaapokki.otf);
+}
+
+@font-face {
     font-family: milano;
     src: url(font/milano.otf);
 }
@@ -119,7 +124,7 @@ body {
   text-align: center;
   color: white;
   vertical-align: middle;
-  padding-top: 20%;
+  padding-top: 10%;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -198,6 +203,10 @@ body {
 
 .geurrilla{
   font-family: geurrilla;
+}
+
+.jaapokki{
+  font-family: jaapokki;
 }
 
 .milano{

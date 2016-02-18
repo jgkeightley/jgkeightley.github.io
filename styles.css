@@ -28,6 +28,11 @@
     src: url(font/troika.otf);
 }
 
+::selection {
+  background: #333;
+  color: #00d2f1;
+}
+
 html, body{
 	height: 100%;
 	text-align: center;

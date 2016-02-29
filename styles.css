@@ -62,6 +62,10 @@ body {
   color: white;
 }
 
+.masthead-brand > img {
+  width: 50px;
+}
+
 .masthead-nav > li {
   display: inline-block;
 }
@@ -266,5 +270,9 @@ body {
   .mural h1, .mural .j1, .mural .j2, .mural .j3, .mural .j4, .mural .j5, .mural .j6 {
     font-size: 3em;
     margin: 0;
+  }
+
+  .masthead-brand > img {
+    width: 100px;
   }
 }

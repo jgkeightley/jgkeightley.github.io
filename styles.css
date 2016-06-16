@@ -28,6 +28,11 @@
     src: url(font/troika.otf);
 }
 
+@font-face {
+    font-family: kraftstoff;
+    src: url(font/kraftstoff.otf);
+}
+
 ::selection {
   background: #333;
   color: #00d2f1;
@@ -221,6 +226,11 @@ body {
 .troika{
   font-family: troika;
 }
+
+.kraftstoff{
+  font-family: kraftstoff;
+}
+
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */

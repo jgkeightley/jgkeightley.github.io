@@ -1,34 +1,4 @@
 @font-face {
-    font-family: bellaboo;
-    src: url(font/bellaboo.otf);
-}
-
-@font-face {
-    font-family: break;
-    src: url(font/break.ttf);
-}
-
-@font-face {
-    font-family: frinco;
-    src: url(font/frinco.ttf);
-}
-
-@font-face {
-    font-family: jaapokki;
-    src: url(font/jaapokki.otf);
-}
-
-@font-face {
-    font-family: milano;
-    src: url(font/milano.ttf);
-}
-
-@font-face {
-    font-family: troika;
-    src: url(font/troika.otf);
-}
-
-@font-face {
     font-family: kraftstoff;
     src: url(font/kraftstoff.otf);
 }
@@ -65,10 +35,7 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   color: white;
-}
-
-.masthead-brand > img {
-  width: 50px;
+  font-size: 300%;
 }
 
 .masthead-nav > li {
@@ -174,7 +141,7 @@ body {
 }
 
 .mural img{
-  width: 60%;
+  width: 80%;
 }
 
 .kraftstoff{
@@ -205,6 +172,7 @@ body {
 @media (min-width: 992px) {
   .masthead-brand{
     float: left;
+    font-size: 250%;
   }
   .masthead-nav{
     float: right;
@@ -224,15 +192,8 @@ body {
   .cover {
     margin-top: 5%
   }
-}
 
-@media (max-width: 768px) {
-  .mural h1, .mural .j1, .mural .j2, .mural .j3, .mural .j4, .mural .j5, .mural .j6 {
-    font-size: 3em;
-    margin: 0;
-  }
-
-  .masthead-brand > img {
-    width: 100px;
+  .mural img{
+    width: 60%;
   }
 }

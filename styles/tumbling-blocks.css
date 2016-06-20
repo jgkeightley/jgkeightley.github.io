@@ -9,7 +9,7 @@ html, body{
 }
 
 body {
-	background-image: url('img/tumbling-blocks.png');
+	background-image: url('../img/tumbling-blocks.png');
     background-size: initial;
     background-position: bottom;
     background-repeat: repeat-x;

@@ -9,7 +9,7 @@ html, body{
 }
 
 body {
-	background-image: url('img/pineapple.jpg');
+	background-image: url('../img/pineapple.jpg');
   background-position: center;
 	background-attachment: fixed;
 }

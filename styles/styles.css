@@ -1,6 +1,6 @@
 @font-face {
     font-family: kraftstoff;
-    src: url(font/kraftstoff.otf);
+    src: url(../font/kraftstoff.otf);
 }
 
 ::selection {

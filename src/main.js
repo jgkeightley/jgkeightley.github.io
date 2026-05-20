@@ -33,7 +33,7 @@ if (profileContainer) {
 
             <!-- M3 Extended FAB -->
             <button onclick="saveContact()" class="py-4 px-8 bg-m3-primary hover:bg-blue-800 text-white rounded-full font-bold text-base shadow-md transition-all flex items-center justify-center gap-3 mx-auto active:scale-95">
-                <i class="fa-solid fa-address-card text-lg"></i> ${profileData.buttonText}
+                <i class="fa-solid fa-hand text-lg"></i> ${profileData.buttonText}
             </button>
         </div>
     `;
@@ -129,6 +129,19 @@ window.showToast = function(message) {
     }, 3000);
 }
 
+window.showHelloToast = function(message) {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = 'bg-slate-900 text-white px-6 py-4 rounded-full shadow-lg flex items-center gap-3 transform translate-y-10 opacity-0 transition-all duration-300';
+    toast.innerHTML = `<i class="fa-solid fa-hand text-m3-primary-container"></i><span class="text-sm font-bold tracking-wide">${message}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 10);
+    setTimeout(() => {
+        toast.classList.add('translate-y-10', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
 window.saveContact = function() {
-    showToast('vCard generated and downloading.');
+    showHelloToast('Hello!');
 }

@@ -8,5 +8,5 @@ export const profileData = {
     githubUrl: "https://github.com/jgkeightley",
     linkedinUrl: "www.linkedin.com/in/jordan-keightley-1b297a3a9", 
     orcidUrl: "https://orcid.org/0000-0003-2753-1154",  
-    buttonText: "Save Contact"
+    buttonText: "Say Hello"
 };

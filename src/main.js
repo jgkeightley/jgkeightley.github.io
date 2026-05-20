@@ -24,12 +24,6 @@ if (profileContainer) {
             <h1 class="text-4xl font-extrabold text-m3-on-primary-container mb-2 tracking-tight">${profileData.name}</h1>
             <p class="text-m3-primary font-bold text-sm mb-6 uppercase tracking-widest">${profileData.title}</p>
             <p class="text-m3-on-primary-container/80 text-base mb-10 leading-relaxed max-w-sm mx-auto">${profileData.bio}</p>
-            
-            <div class="flex justify-center gap-4 mb-10">
-                <a href="${profileData.linkedinUrl}" onclick="showToast('Opening LinkedIn...')" class="w-14 h-14 rounded-[20px] bg-m3-surface border-none flex items-center justify-center text-m3-on-primary-container hover:bg-m3-primary hover:text-white transition-all shadow-sm"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
-                <a href="${profileData.twitterUrl}" onclick="showToast('Opening Twitter...')" class="w-14 h-14 rounded-[20px] bg-m3-surface border-none flex items-center justify-center text-m3-on-primary-container hover:bg-[#1DA1F2] hover:text-white transition-all shadow-sm"><i class="fa-brands fa-twitter text-xl"></i></a>
-                <a href="mailto:${profileData.email}" onclick="showToast('Opening email...')" class="w-14 h-14 rounded-[20px] bg-m3-surface border-none flex items-center justify-center text-m3-on-primary-container hover:bg-m3-primary hover:text-white transition-all shadow-sm"><i class="fa-solid fa-envelope text-xl"></i></a>
-            </div>
 
             <!-- M3 Extended FAB -->
             <button onclick="saveContact()" class="py-4 px-8 bg-m3-primary hover:bg-blue-800 text-white rounded-full font-bold text-base shadow-md transition-all flex items-center justify-center gap-3 mx-auto active:scale-95">

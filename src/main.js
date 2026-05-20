@@ -5,109 +5,110 @@ import { experienceData } from './data/experience.js';
 import { publicationsData } from './data/publications.js';
 import { awardsData } from './data/awards.js';
 
-// 1. Inject Profile (Business Card) Data
+// 1. Inject Profile (M3 Expressive Card)
 const profileContainer = document.getElementById('profile-container');
 if (profileContainer) {
-    // Check if an image URL exists in the data
     const profileVisual = profileData.imageUrl 
-        ? `<img src="${profileData.imageUrl}" alt="${profileData.name}" class="w-full h-full object-cover rounded-sm grayscale-[20%]">`
-        : `<span class="text-4xl font-extrabold text-white">${profileData.initials}</span>`;
+        ? `<img src="${profileData.imageUrl}" alt="${profileData.name}" class="w-full h-full object-cover">`
+        : `<span class="text-5xl font-extrabold text-m3-on-primary-container">${profileData.initials}</span>`;
 
     profileContainer.innerHTML = `
-        <div class="relative w-32 h-32 mx-auto -mt-16 mb-5 rounded-md p-1 bg-[#001f30] border border-white/10 shadow-xl flex items-center justify-center bg-slate-800">
-            ${profileVisual}
-        </div>
-        
-        <h1 class="text-2xl font-bold text-white mb-1 tracking-tight">${profileData.name}</h1>
-        <p class="text-blue-400 font-semibold text-xs mb-5 uppercase tracking-widest">${profileData.title}</p>
-        <div class="w-10 h-[2px] bg-blue-700 mx-auto mb-5"></div>
-        <p class="text-slate-300 text-sm mb-8 leading-relaxed">${profileData.bio}</p>
-        
-        <div class="flex justify-center gap-3 mb-8">
-            <a href="${profileData.linkedinUrl}" onclick="showToast('Opening LinkedIn...')" class="w-10 h-10 rounded-md bg-[#00121d] border border-white/10 flex items-center justify-center text-slate-300 hover:bg-[#0077b5] hover:border-[#0077b5] hover:text-white transition-all duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="${profileData.twitterUrl}" onclick="showToast('Opening Twitter...')" class="w-10 h-10 rounded-md bg-[#00121d] border border-white/10 flex items-center justify-center text-slate-300 hover:bg-[#1DA1F2] hover:border-[#1DA1F2] hover:text-white transition-all duration-300"><i class="fa-brands fa-twitter"></i></a>
-            <a href="mailto:${profileData.email}" onclick="showToast('Opening email client...')" class="w-10 h-10 rounded-md bg-[#00121d] border border-white/10 flex items-center justify-center text-slate-300 hover:bg-blue-700 hover:border-blue-700 hover:text-white transition-all duration-300"><i class="fa-solid fa-envelope"></i></a>
-        </div>
+        <div class="bg-m3-primary-container rounded-[48px] p-8 md:p-12 shadow-sm relative overflow-hidden">
+            <!-- Decorative organic shape -->
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/20 rounded-full blur-2xl"></div>
 
-        <button onclick="saveContact()" class="w-full py-3 px-4 bg-white hover:bg-slate-200 text-[#001f30] rounded-md font-bold text-sm uppercase tracking-wider transition-colors duration-300 flex items-center justify-center gap-2">
-            <i class="fa-solid fa-address-card"></i> ${profileData.buttonText}
-        </button>
+            <div class="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden bg-m3-surface-container-high border-4 border-m3-surface flex items-center justify-center shadow-md">
+                ${profileVisual}
+            </div>
+            
+            <h1 class="text-4xl font-extrabold text-m3-on-primary-container mb-2 tracking-tight">${profileData.name}</h1>
+            <p class="text-m3-primary font-bold text-sm mb-6 uppercase tracking-widest">${profileData.title}</p>
+            <p class="text-m3-on-primary-container/80 text-base mb-10 leading-relaxed max-w-sm mx-auto">${profileData.bio}</p>
+            
+            <div class="flex justify-center gap-4 mb-10">
+                <a href="${profileData.linkedinUrl}" onclick="showToast('Opening LinkedIn...')" class="w-14 h-14 rounded-[20px] bg-m3-surface border-none flex items-center justify-center text-m3-on-primary-container hover:bg-m3-primary hover:text-white transition-all shadow-sm"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                <a href="${profileData.twitterUrl}" onclick="showToast('Opening Twitter...')" class="w-14 h-14 rounded-[20px] bg-m3-surface border-none flex items-center justify-center text-m3-on-primary-container hover:bg-[#1DA1F2] hover:text-white transition-all shadow-sm"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="mailto:${profileData.email}" onclick="showToast('Opening email...')" class="w-14 h-14 rounded-[20px] bg-m3-surface border-none flex items-center justify-center text-m3-on-primary-container hover:bg-m3-primary hover:text-white transition-all shadow-sm"><i class="fa-solid fa-envelope text-xl"></i></a>
+            </div>
+
+            <!-- M3 Extended FAB -->
+            <button onclick="saveContact()" class="py-4 px-8 bg-m3-primary hover:bg-blue-800 text-white rounded-full font-bold text-base shadow-md transition-all flex items-center justify-center gap-3 mx-auto active:scale-95">
+                <i class="fa-solid fa-address-card text-lg"></i> ${profileData.buttonText}
+            </button>
+        </div>
     `;
 }
 
-// 2. Inject Experience Data
+// 2. Inject Experience (M3 Tonal Surface Cards)
 const expContainer = document.getElementById('experience-container');
 if (expContainer) {
     experienceData.forEach(item => {
-        const bulletsHtml = item.bullets.map(b => `<li class="flex gap-2"><i class="fa-solid fa-angle-right text-blue-700 mt-1"></i> ${b}</li>`).join('');
+        const bulletsHtml = item.bullets.map(b => `<li class="flex gap-3"><i class="fa-solid fa-check text-m3-primary mt-1"></i> ${b}</li>`).join('');
         expContainer.innerHTML += `
-            <div class="bg-white p-8 rounded-md shadow-sm border border-slate-300 hover:border-slate-400 transition-colors relative overflow-hidden group mb-6">
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-700 group-hover:w-2 transition-all"></div>
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2 pl-4">
+            <div class="bg-white p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-2">
                     <div>
-                        <h4 class="text-xl font-bold text-slate-900">${item.title}</h4>
-                        <p class="text-slate-500 font-medium mt-1">${item.company}</p>
+                        <h4 class="text-2xl font-bold text-slate-900">${item.title}</h4>
+                        <p class="text-m3-primary font-semibold text-lg mt-1">${item.company}</p>
                     </div>
-                    <span class="inline-block px-3 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded text-xs font-bold uppercase tracking-wider whitespace-nowrap">${item.date}</span>
+                    <span class="inline-block px-4 py-2 bg-m3-secondary-container text-m3-on-secondary-container rounded-full text-sm font-bold tracking-wide whitespace-nowrap">${item.date}</span>
                 </div>
-                <div class="pl-4">
-                    <p class="text-slate-600 text-sm mb-4 leading-relaxed">${item.description}</p>
-                    <ul class="list-none text-sm text-slate-600 space-y-2">${bulletsHtml}</ul>
-                </div>
+                <p class="text-slate-700 text-base mb-6 leading-relaxed">${item.description}</p>
+                <ul class="list-none text-base text-slate-700 space-y-3 font-medium">${bulletsHtml}</ul>
             </div>
         `;
     });
 }
 
-// 3. Inject Education Data
+// 3. Inject Education (M3 Asymmetric Cards)
 const eduContainer = document.getElementById('education-container');
 if (eduContainer) {
     educationData.forEach(item => {
         eduContainer.innerHTML += `
-            <div class="p-8 bg-white border border-slate-200 shadow-sm rounded-md relative group">
-                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <i class="fa-solid ${item.icon} text-6xl text-slate-900"></i>
+            <div class="p-8 bg-m3-secondary-container rounded-[32px] rounded-tr-[100px] relative overflow-hidden transition-all hover:bg-[#D4DAF5]">
+                <div class="w-16 h-16 bg-white/50 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid ${item.icon} text-2xl text-m3-on-secondary-container"></i>
                 </div>
-                <div class="mb-4"><span class="text-xs font-bold text-blue-700 uppercase tracking-widest">${item.date}</span></div>
-                <h4 class="text-lg font-bold text-slate-900 mb-1">${item.degree}</h4>
-                <p class="text-slate-500 text-sm font-semibold mb-4">${item.institution}</p>
-                <p class="text-slate-600 text-sm leading-relaxed">${item.description}</p>
+                <span class="inline-block px-3 py-1 bg-white/60 text-m3-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest mb-4">${item.date}</span>
+                <h4 class="text-xl font-bold text-m3-on-secondary-container mb-2">${item.degree}</h4>
+                <p class="text-m3-primary font-semibold text-sm mb-4">${item.institution}</p>
+                <p class="text-m3-on-secondary-container/80 text-sm leading-relaxed">${item.description}</p>
             </div>
         `;
     });
 }
 
-// 4. Inject Awards Data (Subsection of Education)
+// 4. Inject Awards (M3 Tertiary Container)
 const awardsContainer = document.getElementById('awards-container');
 if (awardsContainer) {
     awardsData.forEach(item => {
         awardsContainer.innerHTML += `
-            <div class="flex gap-5 items-start bg-white p-6 rounded-md border border-slate-200 shadow-sm mb-4">
-                <div class="w-12 h-12 bg-slate-50 border border-slate-200 rounded flex items-center justify-center flex-shrink-0 text-blue-700">
-                    <i class="fa-solid fa-award text-xl"></i>
+            <div class="flex gap-6 items-center bg-m3-tertiary-container p-6 rounded-[28px]">
+                <div class="w-14 h-14 bg-white/40 rounded-full flex items-center justify-center flex-shrink-0 text-m3-tertiary">
+                    <i class="fa-solid fa-award text-2xl"></i>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg text-slate-900">${item.title}</h4>
-                    <p class="text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">${item.issuer} &bull; ${item.date}</p>
-                    <p class="text-slate-600 text-sm">${item.description}</p>
+                    <h4 class="font-bold text-xl text-m3-on-tertiary-container mb-1">${item.title}</h4>
+                    <p class="text-m3-tertiary text-sm font-bold uppercase tracking-wider mb-1">${item.issuer} &bull; ${item.date}</p>
+                    <p class="text-m3-on-tertiary-container/80 text-sm">${item.description}</p>
                 </div>
             </div>
         `;
     });
 }
 
-// 5. Inject Publications Data
+// 5. Inject Publications (M3 Surface High Cards)
 const pubContainer = document.getElementById('publications-container');
 if (pubContainer) {
     publicationsData.forEach(item => {
         pubContainer.innerHTML += `
-            <div class="bg-white p-8 rounded-md shadow-sm border border-slate-300 hover:border-blue-300 transition-colors mb-6">
-                <h4 class="text-xl font-bold text-slate-900 mb-2">${item.title}</h4>
-                <p class="text-slate-500 text-sm font-medium mb-3">${item.authors}</p>
-                <p class="text-blue-700 text-xs font-bold uppercase tracking-wider mb-4">${item.journal} &bull; ${item.date}</p>
-                <p class="text-slate-600 text-sm leading-relaxed mb-5">${item.description}</p>
-                <a href="${item.url}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:text-blue-900 transition-colors">
-                    Read Publication <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <div class="bg-white p-8 rounded-[32px] shadow-sm">
+                <h4 class="text-2xl font-bold text-slate-900 mb-3 leading-snug">${item.title}</h4>
+                <p class="text-slate-600 text-base font-medium mb-4">${item.authors}</p>
+                <div class="inline-block px-4 py-2 bg-m3-surface-container-high rounded-full text-m3-primary text-sm font-bold mb-6">${item.journal} &bull; ${item.date}</div>
+                <p class="text-slate-700 text-base leading-relaxed mb-8">${item.description}</p>
+                <a href="${item.url}" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-m3-secondary-container text-m3-on-secondary-container hover:bg-m3-primary hover:text-white rounded-full text-sm font-bold transition-colors">
+                    Read Publication <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
         `;
@@ -118,8 +119,8 @@ if (pubContainer) {
 window.showToast = function(message) {
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
-    toast.className = 'bg-slate-800 border border-slate-700 text-white px-5 py-4 rounded-md shadow-xl flex items-center gap-3 transform translate-y-10 opacity-0 transition-all duration-300';
-    toast.innerHTML = `<i class="fa-solid fa-circle-check text-blue-500"></i><span class="text-sm font-bold tracking-wide">${message}</span>`;
+    toast.className = 'bg-slate-900 text-white px-6 py-4 rounded-full shadow-lg flex items-center gap-3 transform translate-y-10 opacity-0 transition-all duration-300';
+    toast.innerHTML = `<i class="fa-solid fa-circle-check text-m3-primary-container"></i><span class="text-sm font-bold tracking-wide">${message}</span>`;
     container.appendChild(toast);
     setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 10);
     setTimeout(() => {

@@ -1,32 +1,33 @@
 @import "tailwindcss";
 
-/* Define your custom theme variables here */
 @theme {
-  --color-brand-accent: #1d4ed8;
-  --color-brand-accentDark: #1e3a8a;
-  --font-sans: "Inter", sans-serif;
+  /* Material 3 Expressive Color Roles */
+  --color-m3-surface: #FAF9FD;
+  --color-m3-surface-container: #ECE6F0;
+  --color-m3-surface-container-high: #E6E0E9;
+  
+  --color-m3-primary: #005AC1;
+  --color-m3-on-primary: #FFFFFF;
+  --color-m3-primary-container: #D8E2FF;
+  --color-m3-on-primary-container: #001A41;
+  
+  --color-m3-secondary-container: #DDE2F9;
+  --color-m3-on-secondary-container: #141B2C;
+
+  --color-m3-tertiary: #7D5260;
+  --color-m3-tertiary-container: #FFD8E4;
+  --color-m3-on-tertiary-container: #31111D;
+
+  --font-sans: "Outfit", sans-serif;
 }
 
-/* Standard CSS & Custom Animations */
+/* Base resets for M3 styling */
 body { 
-    background-color: #f1f5f9; 
-}
-
-.textured-bg {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.bounce-subtle { 
-    animation: bounce-subtle 2s infinite; 
-}
-
-@keyframes bounce-subtle {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-8px); }
-    60% { transform: translateY(-4px); }
+    background-color: var(--color-m3-surface);
+    color: #1A1C1E;
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #1e293b; }
-::-webkit-scrollbar-thumb { background: #475569; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #64748b; }
+::-webkit-scrollbar-track { background: var(--color-m3-surface-container); }
+::-webkit-scrollbar-thumb { background: #C4C6D0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #8E9099; }

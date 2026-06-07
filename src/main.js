@@ -143,5 +143,38 @@ window.showHelloToast = function(message) {
 }
 
 window.saveContact = function() {
-    showHelloToast('Hello!');
+    //showHelloToast('Hello!');
+
+    showToast('Preparing contact card...');
+    
+    // 1. Format the data into standard vCard syntax
+    const vCardText = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        `N:Keightley;Jordan;;;`,
+        `FN:${profileData.name}`,
+        `TITLE:${profileData.title}`,
+        //`EMAIL;type=INTERNET;type=WORK:${profileData.email}`,
+        `URL:${profileData.linkedinUrl}`,
+        `NOTE:${profileData.bio}`,
+        "END:VCARD"
+    ].join("\n");
+
+    // 2. Create a Blob (a file-like object) from the text
+    const blob = new Blob([vCardText], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    
+    // 3. Create an invisible download link, click it, and clean up
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'Jordan_Keightley_Contact.vcf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    // Success message
+    setTimeout(() => {
+        showToast('Contact downloaded successfully!');
+    }, 800);
 }
